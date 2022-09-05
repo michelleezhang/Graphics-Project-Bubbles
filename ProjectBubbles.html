@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Project B(ubbles)</title>
+  </head>
+	<!-- Create the HTML5 'canvas' element in which we will run WebGL -->
+  <body onload="main()" onresize="drawResize()">
+    <canvas id="webgl" width = "600" height = "600">
+    Please use a browser that supports "canvas"
+    </canvas>
+	<div id= Description></div>
+	Behold! An anemone and its clownfish friends.
+	<br />
+	Click the "Spin >>" button to make the anemone rotate faster to the right. 
+	Click the "Spin <<" button to make the anemone rotate faster to the left.
+	Drag the mouse onscreen to rotate one of the fish.
+	Use the left, right, up, and down arrow keys to move the camera to the left, right, forward, and backward respectively.
+	Use the W, A, S, and D keys to look up, left, down, and right respectively.
+	<p>
+		<button type="button" onclick="spinDown()">Spin << </button>
+      <button type="button" onclick="spinUp()">Spin >> </button>
+	  <p>
+	Watch the anemone unfurl from a different initial configuration by inputting an initial arm rotation angle below.
+	<div id= CurAngleDisplay></div> 
+	New Angle: <input id='usrAngle' size=10> 
+		<button type="button" onClick='angleSubmit()'>Submit</button><BR> 
+		<div id= EditBoxOut></div>
+	</p>
+	Select an item below to pause/unpause the spin or joint movement of that item.
+	
+	<div id= CurAngleDisplay></div> 
+	Select:
+    <input id="base" type="checkbox" value="1" onClick='runStopBase()'>Anemone base
+    <input id="arms" type="checkbox" value="1" onClick='runStopArms()'>Anemone arms
+    <input id="fish" type="checkbox" value="1" onClick='runStopFish()'>Fish
+    </p>
+
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-quat03.js"></script>
+    <script src="ProjectBubbles.js"></script>
+  </body>
+</html>
